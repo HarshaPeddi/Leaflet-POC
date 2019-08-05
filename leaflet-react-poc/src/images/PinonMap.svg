@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="61" viewBox="0 0 48 61">
+  <defs>
+    <filter id="pin-on-map-a" width="268.8%" height="220%" x="-84.4%" y="-60%" filterUnits="objectBoundingBox">
+      <feOffset dx="2" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"/>
+      <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="2"/>
+      <feColorMatrix in="shadowBlurOuter1" result="shadowMatrixOuter1" values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 1 0"/>
+      <feMerge>
+        <feMergeNode in="shadowMatrixOuter1"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="pin-on-map-b" width="225%" height="188.9%" x="-62.5%" y="-44.4%" filterUnits="objectBoundingBox">
+      <feOffset dx="2" dy="4" in="SourceAlpha" result="shadowOffsetOuter1"/>
+      <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="3"/>
+      <feColorMatrix in="shadowBlurOuter1" result="shadowMatrixOuter1" values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 1 0"/>
+      <feMerge>
+        <feMergeNode in="shadowMatrixOuter1"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <g fill="none" filter="url(#pin-on-map-a)" transform="translate(-747 -386)">
+    <g filter="url(#pin-on-map-b)" transform="translate(751 388)">
+      <path fill="#50E3C2" d="M16,0 C7.1776,0 0,7.06545 0,15.75 C0,18.684225 0.825688889,21.54775 2.38835556,24.03205 L15.0892444,44.1795375 C15.3325333,44.5655 15.7611556,44.8 16.2221333,44.8 C16.6976889,44.7964125 17.1272,44.55465 17.3660444,44.16195 L29.7432,23.81925 C31.2196444,21.38745 32,18.5971625 32,15.75 C32,7.06545 24.8224,0 16,0 Z"/>
+      <path fill="#000" d="M16,7.875 C11.5888,7.875 8,11.407725 8,15.75 C8,20.0645375 11.5304,23.625 16,23.625 C20.5247111,23.625 24,20.0171125 24,15.75 C24,11.407725 20.4112,7.875 16,7.875 Z"/>
+    </g>
+  </g>
+</svg>

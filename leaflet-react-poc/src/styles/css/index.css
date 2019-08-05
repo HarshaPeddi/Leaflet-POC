@@ -1,0 +1,11 @@
+.topbar-padding {
+  height: 100%;
+  width: 200px;
+  background-color: #fff;
+  position: fixed !important;
+  z-index: 1;
+  overflow: auto;
+  padding: 15px; }
+
+.main-container {
+  margin-left: 14%; }
