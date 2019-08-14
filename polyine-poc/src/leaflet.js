@@ -1,41 +1,15 @@
 import React from "react";
 import { Map, TileLayer, Polyline } from "react-leaflet";
-//import { latLongGeo } from './latLongGeoJSON';
-// import { latLongGeo } from './tempLatLong';
 import { latLongGeo } from './convertcsv';
 
 export default class Leaflet extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      
       lat: 32.34756253,
       lng: 34.8613223,
       zoom: 14,
       latLongGeo:latLongGeo,
-      data: [
-        {
-          from_lat: "32.347562525",
-          from_long: "34.8613223",
-          id: "132511",
-          to_lat: "32.3476183",
-          to_long: "34.8610698"
-        },
-        {
-          from_lat: "42.315278",
-          from_long: "-83.2124667",
-          id: "132512",
-          to_lat: "32.3476183",
-          to_long: "34.8610698"
-        },
-        {
-          from_lat: "32.3480779",
-          from_long: "34.8611593",
-          id: "132513",
-          to_lat: "32.3483077",
-          to_long: "34.86120405"
-        }
-      ],
       consoleLog: this.consoleLog()
     };
     this.mapRef = React.createRef();
@@ -88,6 +62,7 @@ export default class Leaflet extends React.Component {
                     feature.properties.events_count === 5 ? 'blue' :  'red' 
                   }
                 />
+              
              </div>
           })} 
           </Map>
