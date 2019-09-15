@@ -26,6 +26,14 @@
 #map {
   height: 100vh
 }
+#map .recharts-wrapper {
+  position: fixed !important;
+  cursor: default;
+  width: 100%;
+  background: transparent;
+  bottom: 0px;
+  z-index: 450;
+}
 
 body {
   margin: 0px

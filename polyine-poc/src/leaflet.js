@@ -1,6 +1,10 @@
 import React from "react";
 import { Map, TileLayer, Polyline, Popup } from "react-leaflet";
 import { latLongGeo } from './convertcsv';
+import './index.css';
+import {
+  BarChart, Bar, XAxis, YAxis, Tooltip,
+} from 'recharts';
 
 export default class Leaflet extends React.Component {
   constructor(props) {
@@ -10,8 +14,9 @@ export default class Leaflet extends React.Component {
       lng: 34.8613223,
       zoom: 14,
       latLongGeo: latLongGeo,
+      graph: latLongGeo.features.slice(0, 40),
       consoleLog: this.consoleLog()
-    };
+    };    
     this.mapRef = React.createRef();
   }
 
@@ -62,7 +67,7 @@ export default class Leaflet extends React.Component {
           />
           {this.state.latLongGeo.features.map((feature) => {
             return <div onClick={this.state.consoleLog}>
-              <Polyline key={feature.properties.id} onClick={(e) => this.addPopup(e, feature)} positions={[
+              <Polyline key={feature.properties.id} onClick={(e) => this.addPopup(e, feature)} lineCap="square" weight={5} positions={[
                 [feature.properties.lat0, feature.properties.lng0], [feature.properties.lat1, feature.properties.lng1]
               ]}
                 color={
@@ -89,6 +94,13 @@ export default class Leaflet extends React.Component {
             </div>
           })}
         </Map>
+        <BarChart width={window.innerWidth} height={300} data={this.state.graph}>
+          <XAxis dataKey="name"/>
+          <YAxis/>
+          <Tooltip/>
+          <Bar dataKey="properties.magnitude" fill="#8884d8"/>
+          {/* <Bar dataKey="uv" fill="#82ca9d" /> */}
+        </BarChart>
       </div>
     );
   }
