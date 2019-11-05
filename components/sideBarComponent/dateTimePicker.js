@@ -41,8 +41,10 @@ export default class DateAndTimePicker extends Component {
                             />
 
                         </Row>
-                        <Row onClick={this.cancelClick} className="cancel-button hover-hand float-left">Cancel</Row>
-                        <Row onClick={this.applyClick} className="accept-button hover-hand">Apply</Row>
+                        <Row className="date-options">
+                            <button onClick={this.cancelClick} className="cancel-button">CANCEL</button>
+                            <button onClick={this.applyClick} className="accept-button">APPLY</button>
+                        </Row>
                     </div>
                 </div>
             </div>
