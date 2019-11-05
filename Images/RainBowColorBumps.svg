@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="149" height="17" viewBox="0 0 149 17">
+  <defs>
+    <linearGradient id="rainbow-color-bumps-a" x1="2.545%" y1="50%" y2="50%">
+      <stop offset="0%" stop-color="#41DBC0"/>
+      <stop offset="29.003%" stop-color="#28BB2C"/>
+      <stop offset="55.564%" stop-color="#CCAE16"/>
+      <stop offset="72.62%" stop-color="#CE4949"/>
+      <stop offset="100%" stop-color="#680303"/>
+    </linearGradient>
+  </defs>
+  <rect width="149" height="17" x="26" y="486" fill="url(#rainbow-color-bumps-a)" transform="translate(-26 -486)"/>
+</svg>

@@ -1,0 +1,10 @@
+---
+  applications:
+  - name: fsm-tactile-mobility-ui-prod
+    path: ../build
+    buildpack: staticfile_buildpack
+    memory: 256M
+    instances: 1
+    
+    env:
+      FORCE_HTTPS: true

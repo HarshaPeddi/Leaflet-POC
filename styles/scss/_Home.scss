@@ -1,0 +1,57 @@
+.bar-chart-container{
+    z-index: 1001;
+    width: 70%;
+    height: 10.51%;
+    background-color: rgba(0,0,0,0.48);
+    position: absolute;
+    top: 88.9%;
+    bottom: 0.59%;
+    min-width: 18% !important;
+}
+
+.bar-chart-content-container {
+    height: 75%;
+    width: 96%;
+    margin: 0 auto;
+    padding-top: 1.8%;
+    min-width: 80% !important;
+}
+
+.hover-hand{
+    cursor: pointer;
+  }
+
+.horizontal-bar{
+    padding-top: 0.95em;
+    width: auto;
+}
+
+hr.style1{
+    border-top: 1px solid #ffffff;
+    margin: 0 auto;
+}
+
+.date-placeholder {
+    color: #ffffff;
+    text-align: center;
+    margin: 0 auto;
+    height: 20%;
+    width: auto;
+    font-size: 1.54vh;
+    font-weight: 500;
+    padding-top:  0.7em;
+    font-family: "Ford Antenna";
+}
+
+.map-container{
+    height: 100vh;
+    width: calc(100% - 200px);
+    background-color: rgba(2,32,72,0.84);
+    z-index: 1000;
+    float: right;
+    position: relative;
+}
+
+.chart{
+    margin: 0 auto !important;
+}

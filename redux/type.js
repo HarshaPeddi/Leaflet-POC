@@ -1,0 +1,9 @@
+export const DATES_ARRAY = 'DATES_ARRAY';
+export const DATA_ARRAY = 'DATA_ARRAY';
+export const BACKGROUND_COLOR = 'BACKGROUND_COLOR';
+export const BORDER_COLOR = 'BORDER_COLOR';
+export const DISPLAY_DATE = 'DISPLAY_DATE';
+export const MAP_DATA = 'MAP_DATA';
+export const COLOR_ARRAY = 'COLOR_ARRAY';
+export const RANGE_ARRAY = 'RANGE_ARRAY';
+export const STRING_RANGE_ARRAY = 'STRING_RANGE_ARRAY';

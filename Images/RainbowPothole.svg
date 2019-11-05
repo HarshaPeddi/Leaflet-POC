@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="149" height="17" viewBox="0 0 149 17">
+  <defs>
+    <linearGradient id="rainbow-pothole-a" x1="5.819%" x2="92.782%" y1="50%" y2="50%">
+      <stop offset="0%" stop-color="#B4EC51"/>
+      <stop offset="43.888%" stop-color="#53A0FD"/>
+      <stop offset="100%" stop-color="#A423AE"/>
+    </linearGradient>
+  </defs>
+  <rect width="149" height="17" x="26" y="486" fill="url(#rainbow-pothole-a)" transform="translate(-26 -486)"/>
+</svg>

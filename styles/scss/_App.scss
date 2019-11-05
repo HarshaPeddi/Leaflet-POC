@@ -1,0 +1,82 @@
+$pad: 20px;
+
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 10px;
+  font-family: sans-serif;
+}
+
+*,
+*:after,
+*:before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+
+.grid {
+  margin: 0 0 $pad 0;
+
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+[class*='col-'] {
+  float: left;
+  padding-right: $pad;
+  .grid &:last-of-type {
+    padding-right: 0;
+  }
+}
+
+.grid-pad {
+  padding: $pad 0 $pad $pad;
+  [class*='col-']:last-of-type {
+    padding-right: $pad;
+  }
+}
+
+.flex-grid {
+  display: flex;
+
+  &.center {
+    align-items: center;
+  }
+
+  &.flex-col {
+    flex-direction: column;
+
+    & .cell {
+      margin-bottom: 16px;
+    }
+  }
+
+  &.flex-grid-thirds {
+    justify-content: space-between;
+
+    & .cell {
+      width: 32%;
+    }
+  }
+}
+.cell {
+  flex: 1;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
