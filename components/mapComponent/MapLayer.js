@@ -1,5 +1,6 @@
+/* global L */
 import React, { Component } from 'react';
-import { Map, TileLayer, Polyline } from 'react-leaflet';
+import { Map, TileLayer, Polyline, Marker } from 'react-leaflet';
 import { LATLNG } from "../../Helpers/Constants"
 import { latLongGeo } from './convertcsv';
 import { connect } from 'react-redux';
@@ -10,7 +11,6 @@ export default class MapLayer extends Component {
         super(props)
         this.selectedDate = this.props.inputType;
         this.state = {
-            zoom: 15,
             latlng: LATLNG,
             latLongGeo: latLongGeo.features,
             selectedDate: this.selectedDate,
@@ -24,22 +24,37 @@ export default class MapLayer extends Component {
 
     componentDidMount() {
         const { latLongGeo } = this.state;
+        var markerArray = [];
         for (let i = 0; i < latLongGeo.length; i++) {
             const feature = latLongGeo[i];
             const { lat0, lng0, lat1, lng1 } = feature.properties;
+            var marker = L.marker(new L.LatLng(lat1, lng1));
+            markerArray.push(marker);
             const distance = this.mapRef.current.leafletElement.distance([lat0, lng0], [lat1, lng1]);
             latLongGeo[i].distance = distance * 3.28084;
+            if(i == latLongGeo.length-1){
+                var group = L.featureGroup(markerArray);
+                this.mapRef.current.leafletElement.fitBounds(group.getBounds());    
+            }
         }
     }
 
     componentWillReceiveProps(nextProps){
+        var markerArray = [];
         if (nextProps.selectedDate !== this.state.selectedDate && nextProps.selectedDate !== undefined){
             var selectedFeatures = []
             this.state.latLongGeo.map((feature) => {
                 if(feature.properties.period_start_time === nextProps.selectedDate){
+                    const { lat1, lng1 } = feature.properties;
+                    var marker = L.marker(new L.LatLng(lat1, lng1));
+                    markerArray.push(marker);
                     selectedFeatures.push(feature)
                 }
             })
+            if (markerArray.length) {
+                var group = L.featureGroup(markerArray);
+                this.mapRef.current.leafletElement.fitBounds(group.getBounds());    
+            }
             this.setState({
                 selectedDate : nextProps.selectedDate,
                 selectedFeatures : selectedFeatures,
@@ -102,8 +117,6 @@ export default class MapLayer extends Component {
             <div>
                 <Map
                     center={position}
-                    zoom={this.state.zoom}
-                    maxZoom={20}
                     style={{ height: "100vh" }}
                     ref={this.mapRef}
                 >
